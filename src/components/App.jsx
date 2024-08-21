@@ -64,7 +64,11 @@ function App() {
 
         <Button onClick={handleShowAddFriend}>{showAddFriend ? "Close" : "Add friend"}</Button>
       </div>
-      {isSelected ? <FormSplitBill friend={isSelected} onSplitBill={handleSplitBill} /> : ""}
+      {isSelected ? (
+        <FormSplitBill friend={isSelected} onSplitBill={handleSplitBill} key={isSelected.id} />
+      ) : (
+        ""
+      )}
     </div>
   );
 }
